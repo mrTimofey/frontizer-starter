@@ -56,7 +56,7 @@ for $i in 1..12
 .c-rest
 	flex 1 0 0
 for $name, $threshold in $g-adapt
-	mediaMax($threshold)
+	+mediaMax($threshold)
 		for $i in 1..12
 			.c-{$name + '-' + $i}
 				flex 0 0 auto
