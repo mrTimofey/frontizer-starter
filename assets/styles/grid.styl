@@ -1,3 +1,17 @@
+mediaMax(max)
+	max = max is a 'unit' ? max : $g-adapt[max]
+	@media all and (max-width max)
+		{block}
+mediaMin(min)
+	min = min is a 'unit' ? min : $g-adapt[min]
+	@media all and (min-width (min + 1))
+		{block}
+mediaBetween(min, max)
+	max = max is a 'unit' ? max : $g-adapt[max]
+	min = min is a 'unit' ? min : $g-adapt[min]
+	@media all and (min-width (min + 1)) and (max-width max)
+		{block}
+
 .g
 	max-width $g-width
 	margin 0 auto
@@ -42,7 +56,7 @@ for $i in 1..12
 .c-rest
 	flex 1 0 0
 for $name, $threshold in $g-adapt
-	@media all and (max-width $threshold)
+	mediaMax($threshold)
 		for $i in 1..12
 			.c-{$name + '-' + $i}
 				flex 0 0 auto
@@ -66,17 +80,3 @@ for $name, $threshold in $g-adapt
 			padding-right 0 !important
 		.{$name}-first
 			order -1
-
-mediaMax(max)
-	max = max is a 'unit' ? max : $g-adapt[max]
-	@media all and (max-width max)
-		{block}
-mediaMin(min)
-	min = min is a 'unit' ? min : $g-adapt[min]
-	@media all and (min-width (min + 1))
-		{block}
-mediaBetween(min, max)
-	max = max is a 'unit' ? max : $g-adapt[max]
-	min = min is a 'unit' ? min : $g-adapt[min]
-	@media all and (min-width (min + 1)) and (max-width max)
-		{block}
