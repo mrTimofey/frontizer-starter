@@ -71,6 +71,7 @@ let spriter = new SVGSpriter({
 
 for (let f of fs.readdirSync(spritesDir)) {
 	let p = spritesDir + '/' + f;
+	if (!f.endsWith('.svg')) return;
 	spriter.add(p, f, fs.readFileSync(p), { encoding: 'utf-8' });
 }
 
