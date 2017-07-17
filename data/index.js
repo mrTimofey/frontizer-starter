@@ -1,0 +1,1 @@
+exports.title = 'Project title';

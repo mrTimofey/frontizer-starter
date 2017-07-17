@@ -1,0 +1,18 @@
+mixin icon(name, addClass)
+	svg.icon(class=addClass): use(xlink:href=("#i-" + name))
+
+mixin pagination()
+	ul.pagination
+		li: a(href="#?page=6" rel="prev")='<'
+		li: a(href="#?page=1") 1
+		li: a(href="#?page=2") 2
+		li.disabled: span ...
+		li: a(href="#?page=5") 5
+		li: a(href="#?page=6") 6
+		li.active: span 7
+		li: a(href="#?page=8") 8
+		li: a(href="#?page=9") 9
+		li.disabled: span ...
+		li: a(href="#?page=99") 99
+		li: a(href="#?page=100") 100
+		li: a(href="#?page=8" rel="next")='>'

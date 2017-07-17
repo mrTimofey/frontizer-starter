@@ -1,0 +1,19 @@
+{
+	"appPort": 3000,
+	"livereloadPort": 35729,
+	"livereloadServerParams": {
+		"delay": 100
+	},
+	"js": [
+		"main.js"
+	],
+	"styles": [
+		"main.styl"
+	],
+	"viewsPath": "views",
+	"sourcePath": "assets",
+	"destPath": "assets/compiled",
+	"dataPath": "data",
+	"apiPath": "api",
+	"cors": true
+}

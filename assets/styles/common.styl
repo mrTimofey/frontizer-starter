@@ -1,0 +1,66 @@
+.icon
+	display inline-block
+	vertical-align top
+	fill currentColor
+	transform translateX(0)
+	background transparent
+	size 1.5em
+	position relative
+	flex 0 0 auto
+	box-sizing border-box
+
+.btn, .btn-bordered
+	display inline-block
+	vertical-align top
+	flex 0 0 auto
+	text-decoration none
+	padding 0.8em 2em
+	cursor pointer
+	transition all 0.1s ease-out
+	outline none
+	text-align center
+	border 1px solid rgba($c-black, 0.9)
+	&:not(.disabled):not([disabled])
+		&:hover, &.active
+			box-shadow 0 2px 3px 0 rgba($c-black, 0.25)
+		&:active
+			opacity 0.9
+	&.sm
+		padding 0.4em 1em
+	&.xs
+		font-size 0.85em
+		padding 0.2em 0.5em
+	&.disabled, &[disabled]
+		cursor default
+.btn
+	color white
+	background $c-black
+	&.disabled, &[disabled]
+		background rgba($c-black, 0.5)
+	&:not(.disabled):not([disabled])
+		&:hover, &.active
+			background lighten($c-black, 10%)
+			border-color @background
+.btn-bordered
+	color $c-black
+	background transparent
+	&:not(.disabled):not([disabled])
+		&:hover, &.active
+			color white
+			background $c-black
+
+.f
+	display flex
+.f-center
+	display flex
+	align-items center
+.f-justify
+	display flex
+	justify-content space-between
+.f-wrap
+	flex-wrap wrap
+
+.fr
+	float right
+.fl
+	float left
