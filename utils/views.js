@@ -33,6 +33,15 @@ exports.linkTo = function(view) {
 	return view.split('/').join('.') + '.html';
 };
 
+/**
+ * Link to asset.
+ * @param path
+ * @returns {string}
+ */
+exports.asset = function(path) {
+	return mode === 'app' ? ('/assets/' + path) : ('assets/' + path);
+}
+
 exports.init = function(_mode) {
 	mode = _mode;
 

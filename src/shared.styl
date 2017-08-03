@@ -16,3 +16,17 @@ $g-adapt = {
 	md: 760px
 	sm: 580px
 }
+
+mediaMax(max)
+	max = max is a 'unit' ? max : $g-adapt[max]
+	@media all and (max-width max)
+		{block}
+mediaMin(min)
+	min = min is a 'unit' ? min : $g-adapt[min]
+	@media all and (min-width (min + 1))
+		{block}
+mediaBetween(min, max)
+	max = max is a 'unit' ? max : $g-adapt[max]
+	min = min is a 'unit' ? min : $g-adapt[min]
+	@media all and (min-width (min + 1)) and (max-width max)
+		{block}
