@@ -1,3 +1,5 @@
-1) npm i -g frontizer
-2) `frontizer start` for live coding on localhost:3000
-3) `frontizer build` for static build
+```
+npm run dev
+
+npm run build
+```
