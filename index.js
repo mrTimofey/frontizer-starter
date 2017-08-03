@@ -4,7 +4,7 @@ const fs = require('fs'),
 	utils = require('./utils/server'),
 	viewsUtils = require('./utils/views');
 
-fs.mkdirSync('dev');
+if (!fs.existsSync('dev')) fs.mkdirSync('dev');
 
 if (config.appPort) {
 	const express = require('express'),
@@ -22,6 +22,7 @@ if (config.appPort) {
 
 	// allows absolute path in 'extends' for jade
 	app.locals.basedir = app.get('views');
+	app.locals.pretty = "\t";
 
 	app.get(/^\/(.*)$/, (req, res) => {
 		let reqPath = req.params[0];
