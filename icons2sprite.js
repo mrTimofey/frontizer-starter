@@ -1,7 +1,7 @@
 const fs = require('fs');
 const SVGSpriter = require('svg-sprite');
 const spritesDir = process.cwd() + '/assets/icons';
-const outputDir = process.cwd() + '/assets/static';
+const outputDir = process.cwd() + '/assets';
 const transform = {
 	cleanupAttrs: true,
 	removeDoctype: true,
