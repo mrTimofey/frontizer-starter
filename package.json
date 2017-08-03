@@ -25,8 +25,9 @@
     "svg-sprite": "^1.3.6"
   },
   "scripts": {
-    "build": "rimraf dist && npm run build:rollup",
+    "build": "rimraf dist && npm run build:sprite && npm run build:rollup",
     "build:rollup": "cross-env NODE_ENV=production rollup -c",
+    "build:sprite": "node icons2sprite",
     "dev": "rimraf dev && concurrently --kill-others \"node index\" \"rollup -c -w\""
   }
 }
