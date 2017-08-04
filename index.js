@@ -12,8 +12,8 @@ if (config.appPort) {
 
 	viewsUtils.init('app');
 
+	app.use(express.static('dev'));
 	app.use('/assets', express.static('assets'));
-	app.use('/', express.static('dev'));
 
 	app.set('view engine', 'pug');
 	app.set('view cache', false);
