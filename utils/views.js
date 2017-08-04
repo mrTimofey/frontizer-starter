@@ -49,7 +49,7 @@ exports.lorem = lorem;
 exports.init = function(_mode) {
 	mode = _mode;
 
-	let path = mode === 'app' ? '/dist/' : 'dist/';
+	let path = mode === 'app' ? '/' : '';
 	exports.__css = '<link href="' + path + 'bundle.css" rel="stylesheet">'
 	exports.__js = '<script src="' + path + 'bundle.js"></script>';
 

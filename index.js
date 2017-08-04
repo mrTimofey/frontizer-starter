@@ -13,7 +13,7 @@ if (config.appPort) {
 	viewsUtils.init('app');
 
 	app.use('/assets', express.static('assets'));
-	app.use('/dist', express.static('dev'));
+	app.use('/', express.static('dev'));
 
 	app.set('view engine', 'pug');
 	app.set('view cache', false);
