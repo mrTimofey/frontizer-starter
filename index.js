@@ -50,6 +50,25 @@ if (config.appPort) {
 		});
 	});
 
+	// mock api
+	app.use(/^\/api\/(.*)$/, (req, res) => {
+		const src = './api/' + req.params[0];
+		fs.exists(src + '.js', exists => {
+			if (!exists) return res.status(404).end('API not found: ' + src);
+			try {
+				let api = require(src);
+				delete require.cache[require.resolve(src)];
+				if (typeof api === 'function') return api(req, res);
+				else return res.json(api);
+			}
+			catch (err) {
+				res.status(500).end(err.toString());
+				console.error('API error in: ' + src);
+				console.error(err);
+			}
+		});
+	});
+
 	app.listen(config.appPort);
 }
 
