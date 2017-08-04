@@ -1,3 +1,5 @@
+const lorem = require('lorem-ipsum');
+
 let mode;
 
 /**
@@ -41,6 +43,8 @@ exports.linkTo = function(view) {
 exports.asset = function(path) {
 	return mode === 'app' ? ('/assets/' + path) : ('assets/' + path);
 }
+
+exports.lorem = lorem;
 
 exports.init = function(_mode) {
 	mode = _mode;
