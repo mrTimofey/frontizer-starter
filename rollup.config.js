@@ -24,7 +24,10 @@ export default {
 		}),
 		buble({
 			include: '**/*.js',
-			exclude: 'node_modules/**'
+			exclude: 'node_modules/**',
+			transforms: {
+				dangerousForOf: true
+			}
 		}),
 		stylus({
 			config(s) {
