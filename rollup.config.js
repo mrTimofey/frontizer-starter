@@ -6,6 +6,7 @@ import buble from 'rollup-plugin-buble';
 import uglify from 'rollup-plugin-uglify';
 import stylus from './rollup/stylus';
 import copy from 'rollup-plugin-copy';
+import json from 'rollup-plugin-json';
 
 const prod = process.env.NODE_ENV === 'production';
 
@@ -36,6 +37,7 @@ export default {
 				if (prod) s.set('compress', true);
 			}
 		}),
+		json(),
 		prod && uglify(),
 		prod && copy({
 			'assets': 'dist/assets'
