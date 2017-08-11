@@ -1,5 +1,4 @@
 const fs = require('fs'),
-	rollup = require('rollup'),
 	config = require('./config'),
 	utils = require('./utils/server'),
 	viewsUtils = require('./utils/views');

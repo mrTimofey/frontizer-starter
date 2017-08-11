@@ -61,10 +61,7 @@ let spriter = new SVGSpriter({
 	mode: {
 		symbol: {
 			dest: '.',
-			sprite: 'sprite.svg',
-			example: {
-				dest: 'sprite.html'
-			}
+			sprite: 'sprite.svg'
 		}
 	}
 });

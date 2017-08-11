@@ -42,7 +42,7 @@ exports.linkTo = function(view) {
  */
 exports.asset = function(path) {
 	return mode === 'app' ? ('/assets/' + path) : ('assets/' + path);
-}
+};
 
 exports.lorem = lorem;
 
